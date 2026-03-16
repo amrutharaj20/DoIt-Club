@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useAuth } from '../hooks/useAuth'
 import { useToast } from '../hooks/useToast'
+import { supabase } from '../lib/supabase'
 import HabitsTab from '../components/HabitsTab'
 import StatsTab from '../components/StatsTab'
 import SquadTab from '../components/SquadTab'
@@ -10,8 +11,30 @@ const TABS = ['Habits', 'Stats', 'Squad']
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('Habits')
-  const { signOut } = useAuth()
+  const [profileOpen, setProfileOpen] = useState(false)
+  const [username, setUsername] = useState('')
+  const { user, signOut } = useAuth()
   const { toast, message, visible } = useToast()
+  const dropdownRef = useRef(null)
+
+  useEffect(() => {
+    if (user) {
+      supabase.from('profiles').select('username').eq('id', user.id).single()
+        .then(({ data }) => { if (data) setUsername(data.username) })
+    }
+  }, [user])
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setProfileOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  const initials = username ? username.slice(0, 2).toUpperCase() : '?'
 
   return (
     <div className={styles.app}>
@@ -29,7 +52,28 @@ export default function Dashboard() {
             </button>
           ))}
         </div>
-        <button className={styles.signOutBtn} onClick={signOut} title="Sign out">↩</button>
+
+        <div className={styles.profileWrapper} ref={dropdownRef}>
+          <button className={styles.avatarBtn} onClick={() => setProfileOpen(o => !o)}>
+            {initials}
+          </button>
+
+          {profileOpen && (
+            <div className={styles.dropdown}>
+              <div className={styles.dropdownHeader}>
+                <div className={styles.avatarLg}>{initials}</div>
+                <div>
+                  <div className={styles.dropName}>{username || 'User'}</div>
+                  <div className={styles.dropEmail}>{user?.email}</div>
+                </div>
+              </div>
+              <div className={styles.dropDivider} />
+              <button className={styles.dropSignOut} onClick={signOut}>
+                Sign out
+              </button>
+            </div>
+          )}
+        </div>
       </nav>
 
       <main className={styles.main}>
