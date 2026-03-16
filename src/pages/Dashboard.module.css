@@ -1,0 +1,88 @@
+.app {
+  min-height: 100vh;
+  background: #0a0a0a;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.orb1 {
+  position: fixed;
+  width: 350px; height: 350px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  filter: blur(80px);
+  top: -100px; left: -100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb2 {
+  position: fixed;
+  width: 250px; height: 250px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.02);
+  filter: blur(60px);
+  bottom: 0; right: -80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px 12px;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 8px;
+}
+
+.navTabs {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.navBtn {
+  flex: 1;
+  padding: 9px 6px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: #444;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
+}
+
+.navBtn.active {
+  background: rgba(255,255,255,0.08);
+  color: #f0ede8;
+  border-color: rgba(255,255,255,0.12);
+}
+
+.signOutBtn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  color: #444;
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+.signOutBtn:hover { color: #f0ede8; border-color: rgba(255,255,255,0.2); }
+
+.main {
+  padding: 20px 20px 40px;
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+}

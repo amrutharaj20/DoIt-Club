@@ -1,0 +1,94 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.orb1 {
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  filter: blur(80px);
+  top: -150px; left: -150px;
+  pointer-events: none;
+}
+
+.orb2 {
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  filter: blur(60px);
+  bottom: -100px; right: -100px;
+  pointer-events: none;
+}
+
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: 'Lora', serif;
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  color: #f0ede8;
+  margin-bottom: 8px;
+}
+
+.sub {
+  font-size: 13px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.error {
+  font-size: 12px;
+  color: #e07060;
+  text-align: center;
+  font-weight: 500;
+}
+
+.switch {
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.switch a {
+  color: #f0ede8;
+  text-decoration: none;
+  font-weight: 600;
+}
+.switch a:hover { text-decoration: underline; }

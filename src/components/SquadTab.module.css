@@ -1,0 +1,36 @@
+.header { margin-bottom: 20px; }
+.title { font-family: 'Lora', serif; font-size: 26px; font-weight: 600; color: #f0ede8; }
+.sub { font-size: 12px; color: #555; margin-top: 4px; font-weight: 500; }
+.empty { color: #333; font-size: 13px; text-align: center; padding: 20px 0; font-weight: 500; }
+
+.profileCard { padding: 16px; display: flex; align-items: center; gap: 14px; margin-bottom: 4px; }
+.avatar { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; color: #888; flex-shrink: 0; }
+.myName { font-size: 15px; font-weight: 600; color: #f0ede8; }
+.myPts { font-size: 12px; color: #555; margin-top: 2px; font-weight: 500; }
+
+.friendCard { padding: 16px; margin-bottom: 10px; }
+.friendHeader { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.friendAvatar { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #777; flex-shrink: 0; }
+.friendName { font-size: 14px; font-weight: 700; color: #f0ede8; }
+.friendPts { font-size: 11px; color: #444; margin-top: 2px; font-weight: 500; }
+.friendProgress { font-size: 11px; color: #444; font-weight: 600; }
+
+.friendHabits { display: flex; flex-direction: column; gap: 7px; }
+.fhRow { display: flex; align-items: center; gap: 8px; }
+.fhDot { width: 18px; height: 18px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 9px; color: #f0ede8; flex-shrink: 0; }
+.fhDot.fhDone { background: rgba(240,237,232,0.9); border-color: rgba(240,237,232,0.9); color: #0a0a0a; }
+.fhName { flex: 1; font-size: 12px; color: #666; font-weight: 500; }
+.fhStreak { font-size: 11px; color: #c47a3a; font-weight: 600; }
+.noHabits { font-size: 11px; color: #333; font-weight: 500; }
+
+.cheerBtn { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 8px; padding: 4px 10px; color: #444; font-size: 11px; cursor: pointer; transition: all 0.2s; font-family: 'Manrope', sans-serif; font-weight: 600; }
+.cheerBtn:hover { background: rgba(255,200,100,0.1); border-color: rgba(255,200,100,0.25); color: #c47a3a; }
+.cheerBtn.cheered { background: rgba(255,200,100,0.1); border-color: rgba(255,200,100,0.25); color: #c47a3a; cursor: default; }
+
+.assignRow { display: flex; gap: 6px; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+.assignSel { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 9px; padding: 7px 10px; color: #f0ede8; font-size: 11px; font-family: 'Manrope', sans-serif; outline: none; font-weight: 500; }
+.assignSel option { background: #111; color: #f0ede8; }
+.assignBtn { background: rgba(255,255,255,0.9); border: none; border-radius: 9px; padding: 7px 14px; color: #0a0a0a; font-size: 11px; font-weight: 700; cursor: pointer; font-family: 'Manrope', sans-serif; transition: all 0.2s; white-space: nowrap; }
+.assignBtn:hover { background: #fff; }
+
+.addRow { display: flex; gap: 8px; }
